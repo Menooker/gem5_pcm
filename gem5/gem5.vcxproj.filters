@@ -1,0 +1,2330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ext\dnet\addr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\arp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\blob.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\eth.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\fw.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\icmp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\intf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\ip.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\ip6.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\os.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\rand.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\route.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\tcp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\dnet\udp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\fputils\fpbits.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\fputils\include\fputils\fp80.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\fputils\tests\test_helper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\libelf\elf32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\libelf\elf64.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\libelf\elf_common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\libelf\elf_queue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\libelf\gelf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\libelf\libelf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\libelf\_libelf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\libfdt\fdt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\libfdt\libfdt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\libfdt\libfdt_env.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\libfdt\libfdt_internal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\arch_const.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\array.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\basic_components.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\arbiter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\area.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\bank.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\basic_circuit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\cacti_interface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\component.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\const.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\crossbar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\decoder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\htree2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\io.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\mat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\nuca.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\parameter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\router.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\subarray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\uca.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\Ucache.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\cacti\wire.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\core.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\globalvar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\interconnect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\iocontrollers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\logic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\memoryctrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\noc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\processor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\sharedcache.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\version.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\xmlParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\mcpat\XML_Parse.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\x11keysym\keysym.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ext\x11keysym\keysymdef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\arch\alpha\aout_machdep.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\arch\alpha\ecoff_machdep.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\arch\alpha\kgdb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\base\loader\coff_sym.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\base\loader\coff_symconst.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\base\loader\exec_aout.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\base\loader\exec_ecoff.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\cpu\m5legion_interface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dev\alpha\access.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dev\alpha\tsunamireg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dev\ide_atareg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dev\ide_wdcreg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dev\mips\access.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dev\mips\maltareg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dev\ns_gige_reg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dev\pcireg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dev\rtcreg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\system\alpha\h\cserve.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\system\alpha\h\dc21164FromGasSources.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\system\alpha\h\ev5_alpha_defs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\system\alpha\h\ev5_defs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\system\alpha\h\ev5_impure.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\system\alpha\h\ev5_osfalpha_defs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\system\alpha\h\ev5_paldef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\system\alpha\h\fromHudsonMacros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\system\alpha\h\fromHudsonOsf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\system\alpha\h\rpb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\system\alpha\h\tlaser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\m5\m5op.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\m5\m5ops.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\statetrace\base\arch_check.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ext\fputils\fp80.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\fputils\tests\fp80_cvfd.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\fputils\tests\fp80_cvtd.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\fputils\tests\fp80_cvtf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\fputils\tests\test_helper.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\gzstream\gzstream.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_begin.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_cntl.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_data.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_end.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_errmsg.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_errno.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_fill.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_flag.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_getarhdr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_getarsym.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_getbase.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_getident.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_hash.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_kind.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_memory.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_next.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_phnum.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_rand.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_rawfile.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_scn.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_shnum.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_shstrndx.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_strptr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_update.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\elf_version.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_checksum.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_dyn.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_ehdr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_fsize.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_getclass.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_phdr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_rel.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_rela.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_shdr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_sym.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_symshndx.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\gelf_xlate.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\libelf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\libelf_align.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\libelf_allocate.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\libelf_ar.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\libelf_checksum.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\libelf_data.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\libelf_ehdr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\libelf_extended.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\libelf_phdr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\libelf_shdr.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libelf\libelf_xlate.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libfdt\fdt.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libfdt\fdt_empty_tree.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libfdt\fdt_ro.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libfdt\fdt_rw.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libfdt\fdt_strerror.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libfdt\fdt_sw.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\libfdt\fdt_wip.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\array.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\basic_components.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\arbiter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\area.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\bank.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\basic_circuit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\cacti_interface.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\component.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\crossbar.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\decoder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\htree2.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\io.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\main.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\mat.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\nuca.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\parameter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\router.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\subarray.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\technology.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\uca.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\Ucache.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\cacti\wire.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\core.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\interconnect.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\iocontrollers.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\logic.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\main.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\memoryctrl.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\noc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\processor.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\sharedcache.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\technology_xeon_core.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\xmlParser.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ext\mcpat\XML_Parse.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\decoder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\ev5.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\faults.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\freebsd\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\idle_event.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\interrupts.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\ipr.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\isa.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\kernel_stats.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\linux\linux.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\linux\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\linux\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\osfpal.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\pagetable.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\regredir.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\remote_gdb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\stacktrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\tlb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\tru64\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\tru64\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\tru64\tru64.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\utility.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\alpha\vtophys.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\decoder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\faults.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\insts\branch64.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\insts\data64.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\insts\fplib.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\insts\macromem.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\insts\mem.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\insts\mem64.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\insts\misc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\insts\misc64.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\insts\pred_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\insts\static_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\insts\vfp.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\interrupts.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\isa.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\linux\linux.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\linux\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\linux\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\miscregs.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\nativetrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\remote_gdb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\stacktrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\stage2_lookup.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\stage2_mmu.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\table_walker.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\tlb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\utility.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\arm\vtophys.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\generic\decode_cache.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\generic\mmapped_ipr.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\bare_iron\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\decoder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\dsp.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\faults.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\idle_event.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\interrupts.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\isa.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\linux\linux.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\linux\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\linux\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\pagetable.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\remote_gdb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\stacktrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\tlb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\utility.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\mips\vtophys.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\null\cpu_dummy.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\decoder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\insts\branch.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\insts\condition.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\insts\floating.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\insts\integer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\insts\mem.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\insts\misc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\insts\static_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\interrupts.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\isa.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\linux\linux.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\linux\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\pagetable.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\stacktrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\tlb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\utility.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\power\vtophys.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\asi.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\decoder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\faults.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\interrupts.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\isa.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\linux\linux.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\linux\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\linux\syscalls.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\nativetrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\pagetable.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\remote_gdb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\solaris\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\solaris\solaris.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\tlb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\ua2005.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\utility.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\sparc\vtophys.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\bios\acpi.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\bios\e820.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\bios\intelmp.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\bios\smbios.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\cpuid.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\decoder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\decoder_tables.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\emulenv.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\faults.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\insts\badmicroop.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\insts\microfpop.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\insts\microldstop.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\insts\micromediaop.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\insts\microop.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\insts\microregop.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\insts\static_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\interrupts.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\isa.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\linux\linux.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\linux\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\linux\syscalls.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\linux\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\nativetrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\pagetable.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\pagetable_walker.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\regs\msr.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\remote_gdb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\stacktrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\tlb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\types.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\utility.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\arch\x86\vtophys.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\atomicio.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\bigint.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\bitmap.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\callback.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\circlebuf.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\cprintf.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\cp_annotate.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\date.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\debug.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\fenv.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\hostinfo.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\inet.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\inifile.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\intmath.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\loader\aout_object.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\loader\dtb_object.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\loader\ecoff_object.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\loader\elf_object.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\loader\hex_file.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\loader\object_file.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\loader\raw_object.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\loader\symtab.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\match.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\misc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\output.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\pollevent.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\random.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\random_mt.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\remote_gdb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\socket.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\statistics.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\stats\text.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\str.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\time.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\trace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\types.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\userinfo.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\vnc\convert.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\vnc\vncinput.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\base\vnc\vncserver.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\activity.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\base.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\checker\cpu.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\cpuevent.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\dummy_checker.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\exetrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\func_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\cpu.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\first_stage.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\inorder_cpu_builder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\inorder_dyn_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\inorder_trace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\pipeline_stage.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\pipeline_traits.5stage.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\pipeline_traits.9stage.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\pipeline_traits.9stage.smt2.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\reg_dep_map.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resource.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\agen_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\branch_predictor.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\cache_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\decode_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\execution_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\fetch_seq_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\fetch_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\graduation_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\inst_buffer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\mult_div_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\tlb_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resources\use_def.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resource_pool.9stage.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resource_pool.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\resource_sked.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\thread_context.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inorder\thread_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\inteltrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\intr_control.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\intr_control_noisa.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\kvm\arm_cpu.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\kvm\base.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\kvm\perfevent.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\kvm\timer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\kvm\vm.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\kvm\x86_cpu.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\legiontrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\nativetrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\base_dyn_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\checker.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\commit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\cpu.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\decode.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\deriv.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\dyn_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\fetch.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\free_list.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\fu_pool.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\iew.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\inst_queue.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\lsq.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\lsq_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\mem_dep_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\probe\simple_trace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\regfile.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\rename.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\rename_map.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\rob.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\scoreboard.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\store_set.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\o3\thread_context.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\back_end.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\base_dyn_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\bpred_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\checker_builder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\cpu.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\cpu_builder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\dyn_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\ea_list.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\front_end.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\inorder_back_end.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\inst_queue.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\lsq_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\lw_back_end.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\lw_lsq.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\ozone_base_dyn_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\rename_table.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\simple_base_dyn_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\ozone\simple_cpu_builder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\pc_event.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\pred\2bit_local.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\pred\bpred_unit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\pred\btb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\pred\ras.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\pred\tournament.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\profile.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\quiesce_event.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\reg_class.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\simple\atomic.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\simple\base.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\simple\timing.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\simple_thread.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\static_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\testers\directedtest\DirectedGenerator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\testers\directedtest\InvalidateGenerator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\testers\directedtest\RubyDirectedTester.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\testers\directedtest\SeriesRequestGenerator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\testers\memtest\memtest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\testers\networktest\networktest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\testers\rubytest\Check.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\testers\rubytest\CheckTable.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\testers\rubytest\RubyTester.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\testers\traffic_gen\generators.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\testers\traffic_gen\traffic_gen.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\thread_context.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\cpu\thread_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\alpha\backdoor.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\alpha\tsunami.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\alpha\tsunami_cchip.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\alpha\tsunami_io.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\alpha\tsunami_pchip.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\a9scu.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\amba_device.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\amba_fake.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\base_gic.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\generic_timer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\gic_pl390.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\hdlcd.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\kmi.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\pl011.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\pl111.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\realview.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\rtc_pl031.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\rv_ctrl.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\timer_cpulocal.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\timer_sp804.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\arm\vgic.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\baddev.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\copy_engine.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\disk_image.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\dma_device.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\etherbus.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\etherdevice.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\etherdump.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\etherint.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\etherlink.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\etherpkt.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\ethertap.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\i8254xGBe.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\ide_ctrl.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\ide_disk.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\intel_8254_timer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\io_device.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\isa_fake.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\mc146818.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\mips\malta.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\mips\malta_cchip.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\mips\malta_io.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\mips\malta_pchip.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\ns_gige.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\pciconfigall.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\pcidev.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\pktfifo.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\platform.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\ps2.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\simple_disk.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\sinic.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\sparc\dtod.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\sparc\iob.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\sparc\mm_disk.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\sparc\t1000.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\terminal.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\uart.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\uart8250.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\x86\cmos.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\x86\i8042.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\x86\i82094aa.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\x86\i8237.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\x86\i8254.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\x86\i8259.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\x86\intdev.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\x86\pc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\x86\south_bridge.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dev\x86\speaker.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\kern\kernel_stats.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\kern\linux\events.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\kern\linux\linux.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\kern\linux\linux_syscalls.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\kern\linux\printk.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\kern\operatingsystem.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\kern\system_events.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\kern\tru64\dump_mbuf.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\kern\tru64\printf.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\kern\tru64\tru64_events.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\kern\tru64\tru64_syscalls.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\abstract_mem.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\addr_mapper.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\bridge.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\bus.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\base.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\blk.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\cache.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\mshr.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\mshr_queue.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\prefetch\base.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\prefetch\ghb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\prefetch\stride.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\prefetch\tagged.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\tags\base.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\tags\fa_lru.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\cache\tags\lru.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\coherent_bus.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\comm_monitor.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\dramsim2.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\dramsim2_wrapper.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\dram_ctrl.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\fs_translating_port_proxy.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\mem_object.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\mport.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\noncoherent_bus.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\packet.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\packet_queue.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\page_table.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\physical.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\port.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\port_proxy.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\buffers\MessageBuffer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\buffers\MessageBufferNode.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\common\Address.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\common\Consumer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\common\DataBlock.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\common\Global.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\common\Histogram.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\common\NetDest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\common\Set.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\common\SubBlock.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\filters\BlockBloomFilter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\filters\BulkBloomFilter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\filters\GenericBloomFilter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\filters\H3BloomFilter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\filters\LSB_CountingBloomFilter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\filters\MultiBitSelBloomFilter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\filters\MultiGrainBloomFilter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\filters\NonCountingBloomFilter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\BasicLink.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\BasicRouter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\fault_model\FaultModel.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\BaseGarnetNetwork.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\flitBuffer_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\flit_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\GarnetLink_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\GarnetNetwork_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\InputUnit_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\NetworkInterface_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\NetworkLink_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\OutputUnit_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\OutVcState_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\Router_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\RoutingUnit_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\SWallocator_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\Switch_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\VCallocator_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\fixed-pipeline\VirtualChannel_d.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\flexible-pipeline\flit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\flexible-pipeline\flitBuffer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\flexible-pipeline\GarnetLink.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\flexible-pipeline\GarnetNetwork.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\flexible-pipeline\InVcState.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\flexible-pipeline\NetworkInterface.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\flexible-pipeline\NetworkLink.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\flexible-pipeline\OutVcState.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\flexible-pipeline\Router.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\garnet\flexible-pipeline\VCarbiter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\Network.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Allocator\Arbiter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Allocator\MatrixArbiter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Allocator\RRArbiter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Allocator\SWAllocator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Allocator\VCAllocator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Buffer\AmpUnit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Buffer\BitlineUnit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Buffer\Buffer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Buffer\DecoderUnit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Buffer\MemUnit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Buffer\OutdrvUnit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Buffer\PrechargeUnit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Buffer\Register.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Buffer\SRAM.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Buffer\WordlineUnit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Clock.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\ConfigFile.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Crossbar\Crossbar.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Crossbar\MatrixCrossbar.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Crossbar\MultreeCrossbar.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\FlipFlop.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\NetworkPower.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\OrionConfig.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\OrionLink.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\OrionRouter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\TechParameter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\orion\Wire.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\simple\PerfectSwitch.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\simple\SimpleLink.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\simple\SimpleNetwork.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\simple\Switch.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\simple\Throttle.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\network\Topology.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\profiler\AccessTraceForAddress.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\profiler\AddressProfiler.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\profiler\MemCntrlProfiler.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\profiler\Profiler.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\profiler\StoreTrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\recorder\CacheRecorder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\slicc_interface\AbstractCacheEntry.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\slicc_interface\AbstractController.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\slicc_interface\AbstractEntry.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\slicc_interface\RubyRequest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\structures\Prefetcher.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\BankedArray.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\CacheMemory.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\DirectoryMemory.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\DMASequencer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\MemoryControl.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\MemoryNode.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\PersistentTable.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\RubyMemoryControl.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\RubyPort.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\RubyPortProxy.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\Sequencer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\SparseMemory.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\System.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\TimerTable.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\ruby\system\WireBuffer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\se_translating_port_proxy.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\simple_mem.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mem\tport.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\proto\protoio.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\python\swig\pyevent.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\python\swig\pyobject.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\arguments.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\async.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\clock_domain.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\core.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\debug.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\drain.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\eventq.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\faults.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\global_event.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\init.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\main.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\probe\probe.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\process.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\pseudo_inst.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\root.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\serialize.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\simulate.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\sim_events.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\sim_object.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\stat_control.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\syscall_emul.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\system.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\tlb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sim\voltage_domain.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\bitvectest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\circletest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\cprintftest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\cprintftime.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\initest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\nmtest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\rangemaptest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\refcnttest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\stattest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\strnumtest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\symtest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\tokentest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\trietest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\unittest\unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\system\alpha\console\console.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\system\alpha\console\printf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tests\test-progs\hello\src\hello.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\ccdrv\devtime.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\m5\jni_gem5Op.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\m5\m5.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\statetrace\arch\amd64\tracechild.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\statetrace\arch\arm\tracechild.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\statetrace\arch\i686\tracechild.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\statetrace\arch\sparc\tracechild.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\statetrace\base\statetrace.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\statetrace\base\tracechild.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\tap\tap.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\term\term.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\ext\ply\doc\internal.html" />
+    <None Include="..\ext\ply\doc\ply.html" />
+    <None Include="..\src\doxygen\footer.html" />
+    <None Include="..\COPYING" />
+    <None Include="..\LICENSE" />
+    <None Include="..\README" />
+    <None Include="..\SConstruct" />
+    <None Include="..\.gitignore" />
+    <None Include="..\.tfignore" />
+  </ItemGroup>
+</Project>
