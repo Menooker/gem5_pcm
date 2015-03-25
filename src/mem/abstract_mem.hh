@@ -116,6 +116,8 @@ class AbstractMemory : public MemObject
     // Should the memory appear in the global address map
     bool inAddrMap;
 
+    unsigned int isPcm;
+
     std::list<LockedAddr> lockedAddrList;
 
     // helper function for checkLockedAddrs(): we really want to

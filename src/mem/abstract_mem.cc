@@ -57,6 +57,7 @@ using namespace std;
 AbstractMemory::AbstractMemory(const Params *p) :
     MemObject(p), range(params()->range), pmemAddr(NULL),
     confTableReported(p->conf_table_reported), inAddrMap(p->in_addr_map),
+	isPcm(p->is_pcm),
     _system(NULL)
 {
     if (size() % TheISA::PageBytes != 0)
@@ -315,6 +316,8 @@ AbstractMemory::checkLockedAddrList(PacketPtr pkt)
 void
 AbstractMemory::access(PacketPtr pkt)
 {
+if (isPcm != 0x00000003)
+panic("21324546111111111111111111111111111111111\n");
     assert(AddrRange(pkt->getAddr(),
                      pkt->getAddr() + pkt->getSize() - 1).isSubset(range));
 
