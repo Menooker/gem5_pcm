@@ -36,9 +36,11 @@
 
 #ifndef __BASE_TYPES_HH__
 #define __BASE_TYPES_HH__
-
+#ifdef _MSC_VER //definition of int(s) in MSVC
+#include <stdint.h> 
+#else
 #include <inttypes.h>
-
+#endif
 #include <cassert>
 #include <ostream>
 
