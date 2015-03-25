@@ -56,11 +56,6 @@
 
 class System;
 
-#define mDPRINTF( ...) do {                                    \
-    using namespace Debug;                                      \
-                                              \
-        Trace::dprintf(curTick(), name(), __VA_ARGS__);           \
-} while (0)
 /**
  * Locked address class that represents a physical address and a
  * context id.
@@ -196,7 +191,10 @@ class AbstractMemory : public MemObject
 		uint8_t* ModifiedStart;
 		uint8_t* ModifiedEnd;
 		AbstractMemory* mem;
-		const int32_t Magic=0x1223DEEE;
+#define Magic 0x1223DEEE
+#define FREAD(a,b,c,d)  do {                                   \
+    if(fread(a,b,c,d)!=b) panic("Read file error!")	;		\
+} while (0)
 
 		void WriteToFile(void* p,size_t sz)
 		{
@@ -235,7 +233,7 @@ class AbstractMemory : public MemObject
 			if(!f) //if no 
 				return;
 			//read Magic code
-			fread(&mMagic,sizeof(mMagic),1,f);
+			FREAD(&mMagic,sizeof(mMagic),1,f);
 			if(mMagic!=Magic)
 			{
 				panic("Bad Mem File");
@@ -243,17 +241,17 @@ class AbstractMemory : public MemObject
 
 			//read the offset of the buffer
 			size_t offset;
-			fread(&offset,sizeof(offset),1,f);
+			FREAD(&offset,sizeof(offset),1,f);
 			assert(offset< mem->size()); // offset should be >=0 and <size
 			
 
 			//read the size of the buffer
-			fread(&sz,sizeof(sz),1,f);
+			FREAD(&sz,sizeof(sz),1,f);
 			assert(sz < mem->size() && offset+sz <= mem->size());
 
 
 			//read the buffer
-			fread(mem->pmemAddr+offset,sz,1,f);
+			FREAD(mem->pmemAddr+offset,sz,1,f);
 
 			fclose(f);
 
@@ -279,8 +277,10 @@ class AbstractMemory : public MemObject
 		}
 		void NotifyBufferChanged()
 		{
+			Trace::dprintf(curTick(),Trace::DefaultName,"BUFFER CHANGED!!!!!\n");
 			ModifiedStart = mem->pmemAddr + mem->size()+1; 
 			ModifiedEnd = mem->pmemAddr; 
+			ReadBuffer();
 		}
 		void WriteAccess(uint8_t* p,size_t sz)
 		{

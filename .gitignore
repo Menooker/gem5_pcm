@@ -51,3 +51,4 @@ ext/dramsim2/DRAMSim2
 *.opensdf
 gem5.sdf
 *.sdf
+*.ipch

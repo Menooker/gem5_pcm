@@ -57,8 +57,7 @@ using namespace std;
 AbstractMemory::AbstractMemory(const Params *p) :
     MemObject(p), range(params()->range), pmemAddr(NULL),
     confTableReported(p->conf_table_reported), inAddrMap(p->in_addr_map),
-	isPcm(p->is_pcm),
-    _system(NULL)
+    _system(NULL),pcm_mgr(this)
 {
     if (size() % TheISA::PageBytes != 0)
         panic("Memory Size not divisible by page size\n");
