@@ -52,10 +52,15 @@
 #include "mem/mem_object.hh"
 #include "params/AbstractMemory.hh"
 #include "sim/stats.hh"
-
+#include <stdio.h>
 
 class System;
 
+#define mDPRINTF( ...) do {                                    \
+    using namespace Debug;                                      \
+                                              \
+        Trace::dprintf(curTick(), name(), __VA_ARGS__);           \
+} while (0)
 /**
  * Locked address class that represents a physical address and a
  * context id.
@@ -180,7 +185,118 @@ class AbstractMemory : public MemObject
      */
     System *_system;
 
+	//////////////////////////////////////////
+	//PCM part
+	bool isPcm;
+	int pcmId;
+	
+	friend class PcmManager;
+	class PcmManager
+	{
+		uint8_t* ModifiedStart;
+		uint8_t* ModifiedEnd;
+		AbstractMemory* mem;
+		const int32_t Magic=0x1223DEEE;
 
+		void WriteToFile(void* p,size_t sz)
+		{
+			char filename[100];
+			int32_t mMagic=Magic;
+			sprintf(filename,"pcm_dump_%d.memdmp",mem->pcmId);
+			FILE* f=fopen(filename,"wb+");
+			//write Magic code
+			fwrite(&mMagic,sizeof(mMagic),1,f);
+
+
+			//write the offset of the buffer
+			mMagic= (uint8_t*)p-mem->pmemAddr; // calc the offset of the modified buffer
+			assert(mMagic>=0 && mMagic< mem->size()); // offset should be >=0 and <size
+			fwrite(&mMagic,sizeof(mMagic),1,f);
+
+			//write the size of the buffer
+			assert(sz < mem->size());
+			fwrite(&sz,sizeof(sz),1,f);
+
+			//write the buffer
+			fwrite(p,sz,1,f);
+
+			fclose(f);
+
+		}
+
+	public: 
+		void ReadBuffer()
+		{
+			char filename[100];
+			int32_t mMagic;
+			size_t sz;
+			sprintf(filename,"pcm_dump_%d.memdmp",mem->pcmId);
+			FILE* f=fopen(filename,"rb");
+			if(!f) //if no 
+				return;
+			//read Magic code
+			fread(&mMagic,sizeof(mMagic),1,f);
+			if(mMagic!=Magic)
+			{
+				panic("Bad Mem File");
+			}
+
+			//read the offset of the buffer
+			size_t offset;
+			fread(&offset,sizeof(offset),1,f);
+			assert(offset< mem->size()); // offset should be >=0 and <size
+			
+
+			//read the size of the buffer
+			fread(&sz,sizeof(sz),1,f);
+			assert(sz < mem->size() && offset+sz <= mem->size());
+
+
+			//read the buffer
+			fread(mem->pmemAddr+offset,sz,1,f);
+
+			fclose(f);
+
+		}
+
+		PcmManager(AbstractMemory* m)
+		{
+			ModifiedStart=NULL;
+			ModifiedEnd=NULL;
+			mem=m;
+		}
+
+		~PcmManager()
+		{
+			if(mem->isPcm)
+			{
+				assert(ModifiedStart && ModifiedEnd);
+				if(ModifiedStart < ModifiedEnd)
+				{
+					WriteToFile(ModifiedStart,ModifiedEnd-ModifiedStart);
+				}
+			}
+		}
+		void NotifyBufferChanged()
+		{
+			ModifiedStart = mem->pmemAddr + mem->size()+1; 
+			ModifiedEnd = mem->pmemAddr; 
+		}
+		void WriteAccess(uint8_t* p,size_t sz)
+		{
+			if(p<ModifiedStart)
+			{
+				ModifiedStart=p;
+			}
+			if(p+sz>ModifiedEnd)
+			{
+				ModifiedEnd=p+sz;
+			}
+		}
+	}pcm_mgr;
+
+	
+	//////////////////////////////////////////
   private:
 
     // Prevent copying

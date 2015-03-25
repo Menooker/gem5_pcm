@@ -68,6 +68,7 @@ void
 AbstractMemory::setBackingStore(uint8_t* pmem_addr)
 {
     pmemAddr = pmem_addr;
+	pcm_mgr.NotifyBufferChanged();
 }
 
 void
