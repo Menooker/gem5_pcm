@@ -53,7 +53,7 @@
 #include "params/AbstractMemory.hh"
 #include "sim/stats.hh"
 #include <stdio.h>
-
+#include "base/callback.hh"
 class System;
 
 /**
@@ -192,7 +192,7 @@ class AbstractMemory : public MemObject
 		AbstractMemory* mem;
 #define Magic 0x1223DEEE
 #define FREAD(a,b,c,d)  do {                                   \
-    if(fread(a,b,c,d)!=b) panic("Read file error!")	;		\
+    if(fread(a,b,c,d)!=c) panic("Read file error!")	;		\
 } while (0)
 
 		void WriteToFile(void* p,size_t sz)
@@ -263,10 +263,15 @@ class AbstractMemory : public MemObject
 			ModifiedEnd=NULL;
 			mem=m;
 			if(m->isPcm)
+			{
 				Trace::dprintf(curTick(),Trace::DefaultName,"PCM MODE!!!!!\n");
+				Callback* cb = new MakeCallback<PcmManager,
+					&PcmManager::Destructor>(this);
+				registerExitCallback(cb);
+			}
 		}
 
-		~PcmManager()
+		void Destructor()
 		{
 			Trace::dprintf(curTick(),Trace::DefaultName,"destructor!!!!!!!!!\n");
 			if(mem->isPcm)
@@ -278,6 +283,11 @@ class AbstractMemory : public MemObject
 					WriteToFile(ModifiedStart,ModifiedEnd-ModifiedStart);
 				}
 			}
+		}
+
+		~PcmManager()
+		{
+			Destructor();
 		}
 		void NotifyBufferChanged()
 		{
