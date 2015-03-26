@@ -182,7 +182,6 @@ class AbstractMemory : public MemObject
 
 	//////////////////////////////////////////
 	//PCM part
-	bool isPcm;
 	int pcmId;
 	
 	friend class PcmManager;
@@ -198,6 +197,7 @@ class AbstractMemory : public MemObject
 
 		void WriteToFile(void* p,size_t sz)
 		{
+			Trace::dprintf(curTick(),Trace::DefaultName,"Write Buffer!!!!! sz = %d\n",sz);
 			char filename[100];
 			int32_t mMagic=Magic;
 			sprintf(filename,"pcm_dump_%d.memdmp",mem->pcmId);
@@ -262,12 +262,16 @@ class AbstractMemory : public MemObject
 			ModifiedStart=NULL;
 			ModifiedEnd=NULL;
 			mem=m;
+			if(m->isPcm)
+				Trace::dprintf(curTick(),Trace::DefaultName,"PCM MODE!!!!!\n");
 		}
 
 		~PcmManager()
 		{
+			Trace::dprintf(curTick(),Trace::DefaultName,"destructor!!!!!!!!!\n");
 			if(mem->isPcm)
 			{
+				mem->pcmId=0;
 				assert(ModifiedStart && ModifiedEnd);
 				if(ModifiedStart < ModifiedEnd)
 				{
@@ -277,10 +281,13 @@ class AbstractMemory : public MemObject
 		}
 		void NotifyBufferChanged()
 		{
-			Trace::dprintf(curTick(),Trace::DefaultName,"BUFFER CHANGED!!!!!\n");
-			ModifiedStart = mem->pmemAddr + mem->size()+1; 
-			ModifiedEnd = mem->pmemAddr; 
-			ReadBuffer();
+			if(mem->isPcm)
+			{
+				Trace::dprintf(curTick(),Trace::DefaultName,"BUFFER CHANGED!!!!!\n");
+				ModifiedStart = mem->pmemAddr + mem->size()+1; 
+				ModifiedEnd = mem->pmemAddr; 
+				ReadBuffer();
+			}
 		}
 		void WriteAccess(uint8_t* p,size_t sz)
 		{
@@ -310,7 +317,7 @@ class AbstractMemory : public MemObject
     typedef AbstractMemoryParams Params;
 
     AbstractMemory(const Params* p);
-    virtual ~AbstractMemory() {}
+    virtual ~AbstractMemory() {Trace::dprintf(curTick(),Trace::DefaultName,"destructor!!!!!!!!!\n");}
 
     /**
      * See if this is a null memory that should never store data and
