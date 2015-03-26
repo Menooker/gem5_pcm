@@ -252,7 +252,8 @@ class AbstractMemory : public MemObject
 
 			//read the buffer
 			FREAD(mem->pmemAddr+offset,sz,1,f);
-
+			ModifiedStart= mem->pmemAddr+offset;
+			ModifiedEnd= ModifiedStart+sz;
 			fclose(f);
 
 		}
