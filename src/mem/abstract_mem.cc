@@ -316,7 +316,7 @@ AbstractMemory::checkLockedAddrList(PacketPtr pkt)
 void
 AbstractMemory::access(PacketPtr pkt)
 {
-if (isPcm != 0x00000003)
+if (isPcm)
 panic("21324546111111111111111111111111111111111\n");
     assert(AddrRange(pkt->getAddr(),
                      pkt->getAddr() + pkt->getSize() - 1).isSubset(range));

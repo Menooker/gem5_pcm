@@ -150,6 +150,9 @@ def config_mem(options, system):
     cache_line_bit = int(math.log(system.cache_line_size.value, 2)) - 1
     intlv_low_bit = cache_line_bit
 
+    if (not options.pcm):
+        options.pcm = False;
+
     # For every range (most systems will only have one), create an
     # array of controllers and set their parameters to match their
     # address mapping in the case of a DRAM
@@ -157,7 +160,7 @@ def config_mem(options, system):
         for i in xrange(nbr_mem_ctrls):
             # Create an instance so we can figure out the address
             # mapping and row-buffer size
-            ctrl = cls()
+            ctrl = cls(is_pcm = options.pcm);
 
             # Only do this for DRAMs
             if issubclass(cls, m5.objects.DRAMCtrl):

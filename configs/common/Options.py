@@ -96,6 +96,8 @@ def addCommonOptions(parser):
 
     parser.add_option("-l", "--lpae", action="store_true")
     parser.add_option("-V", "--virtualisation", action="store_true")
+    parser.add_option("-pcm", "--pcm", action="store_true",
+                      help="Using PCM")
 
     # Cache Options
     parser.add_option("--caches", action="store_true")

@@ -48,6 +48,7 @@ m5out
 src/doxygen
 
 ext/dramsim2/DRAMSim2
+gem5/
 *.opensdf
 gem5.sdf
 *.sdf

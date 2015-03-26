@@ -229,7 +229,7 @@ if options.ruby:
     # Use SimpleMemory with the null option since this memory is only used
     # for determining which addresses are within the range of the memory.
     # No space allocation is required.
-    system.physmem = SimpleMemory(range=AddrRange(options.mem_size),
+    system.physmem = SimpleMemory(is_pcm = options.pcm,range=AddrRange(options.mem_size),
                               null = True)
     options.use_map = True
     Ruby.create_system(options, system)
