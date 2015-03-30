@@ -1,3 +1,5 @@
+This is a gem5 simulator fork. We are trying to add persistent memory simulation support on it.
+Here goes the original readme :
 This is the gem5 simulator.
 
 For detailed information about building the simulator and getting
