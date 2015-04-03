@@ -184,7 +184,7 @@ class AbstractMemory : public MemObject
 	//PCM part
 	int pcmId;
 	
-	friend class PcmManager;
+	friend class PcmManager;\
 	class PcmManager
 	{
 		uint8_t* ModifiedStart;
@@ -212,7 +212,7 @@ class AbstractMemory : public MemObject
 			fwrite(&mMagic,sizeof(mMagic),1,f);
 
 			//write the size of the buffer
-			assert(sz < mem->size());
+			assert(sz <= mem->size());
 			fwrite(&sz,sizeof(sz),1,f);
 
 			//write the buffer
@@ -247,7 +247,7 @@ class AbstractMemory : public MemObject
 
 			//read the size of the buffer
 			FREAD(&sz,sizeof(sz),1,f);
-			assert(sz < mem->size() && offset+sz <= mem->size());
+			assert(sz <= mem->size() && offset+sz <= mem->size());
 
 
 			//read the buffer
