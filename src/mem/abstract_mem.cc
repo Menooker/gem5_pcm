@@ -56,9 +56,8 @@ using namespace std;
 
 AbstractMemory::AbstractMemory(const Params *p) :
     MemObject(p), range(params()->range), pmemAddr(NULL),
-    confTableReported(p->conf_table_reported), inAddrMap(p->in_addr_map),
-	isPcm(p->is_pcm),
-    _system(NULL)
+    confTableReported(p->conf_table_reported), inAddrMap(p->in_addr_map),isPcm(params()->is_pcm),
+    _system(NULL),pcm_mgr(this)
 {
     if (size() % TheISA::PageBytes != 0)
         panic("Memory Size not divisible by page size\n");
@@ -68,6 +67,7 @@ void
 AbstractMemory::setBackingStore(uint8_t* pmem_addr)
 {
     pmemAddr = pmem_addr;
+	pcm_mgr.NotifyBufferChanged();
 }
 
 void
@@ -359,8 +359,10 @@ panic("21324546111111111111111111111111111111111\n");
         }
 
         if (overwrite_mem)
+		{
             std::memcpy(hostAddr, &overwrite_val, pkt->getSize());
-
+			pcm_mgr.WriteAccess(hostAddr, pkt->getSize());
+		}
         assert(!pkt->req->isInstFetch());
         TRACE_PACKET("Read/Write");
         numOther[pkt->req->masterId()]++;
@@ -380,6 +382,7 @@ panic("21324546111111111111111111111111111111111\n");
         if (writeOK(pkt)) {
             if (pmemAddr) {
                 memcpy(hostAddr, pkt->getPtr<uint8_t>(), pkt->getSize());
+				pcm_mgr.WriteAccess(hostAddr, pkt->getSize());
                 DPRINTF(MemoryAccess, "%s wrote %x bytes to address %x\n",
                         __func__, pkt->getSize(), pkt->getAddr());
             }
@@ -414,7 +417,10 @@ AbstractMemory::functionalAccess(PacketPtr pkt)
         pkt->makeResponse();
     } else if (pkt->isWrite()) {
         if (pmemAddr)
+		{
             memcpy(hostAddr, pkt->getPtr<uint8_t>(), pkt->getSize());
+			pcm_mgr.WriteAccess(hostAddr, pkt->getSize());
+		}
         TRACE_PACKET("Write");
         pkt->makeResponse();
     } else if (pkt->isPrint()) {

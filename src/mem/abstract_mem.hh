@@ -52,8 +52,8 @@
 #include "mem/mem_object.hh"
 #include "params/AbstractMemory.hh"
 #include "sim/stats.hh"
-
-
+#include <stdio.h>
+#include "base/callback.hh"
 class System;
 
 /**
@@ -180,7 +180,141 @@ class AbstractMemory : public MemObject
      */
     System *_system;
 
+	//////////////////////////////////////////
+	//PCM part
+	int pcmId;
+	
+	friend class PcmManager;\
+	class PcmManager
+	{
+		uint8_t* ModifiedStart;
+		uint8_t* ModifiedEnd;
+		AbstractMemory* mem;
+#define Magic 0x1223DEEE
+#define FREAD(a,b,c,d)  do {                                   \
+    if(fread(a,b,c,d)!=c) panic("Read file error!")	;		\
+} while (0)
 
+		void WriteToFile(void* p,size_t sz)
+		{
+			Trace::dprintf(curTick(),Trace::DefaultName,"Write Buffer!!!!! sz = %d\n",sz);
+			char filename[100];
+			int32_t mMagic=Magic;
+			sprintf(filename,"pcm_dump_%d.memdmp",mem->pcmId);
+			FILE* f=fopen(filename,"wb+");
+			//write Magic code
+			fwrite(&mMagic,sizeof(mMagic),1,f);
+
+
+			//write the offset of the buffer
+			mMagic= (uint8_t*)p-mem->pmemAddr; // calc the offset of the modified buffer
+			assert(mMagic>=0 && mMagic< mem->size()); // offset should be >=0 and <size
+			fwrite(&mMagic,sizeof(mMagic),1,f);
+
+			//write the size of the buffer
+			assert(sz <= mem->size());
+			fwrite(&sz,sizeof(sz),1,f);
+
+			//write the buffer
+			fwrite(p,sz,1,f);
+
+			fclose(f);
+
+		}
+
+	public: 
+		void ReadBuffer()
+		{
+			char filename[100];
+			int32_t mMagic;
+			size_t sz;
+			sprintf(filename,"pcm_dump_%d.memdmp",mem->pcmId);
+			FILE* f=fopen(filename,"rb");
+			if(!f) //if no 
+				return;
+			//read Magic code
+			FREAD(&mMagic,sizeof(mMagic),1,f);
+			if(mMagic!=Magic)
+			{
+				panic("Bad Mem File");
+			}
+
+			//read the offset of the buffer
+			size_t offset;
+			FREAD(&offset,sizeof(offset),1,f);
+			assert(offset< mem->size()); // offset should be >=0 and <size
+			
+
+			//read the size of the buffer
+			FREAD(&sz,sizeof(sz),1,f);
+			assert(sz <= mem->size() && offset+sz <= mem->size());
+
+
+			//read the buffer
+			FREAD(mem->pmemAddr+offset,sz,1,f);
+			ModifiedStart= mem->pmemAddr+offset;
+			ModifiedEnd= ModifiedStart+sz;
+			fclose(f);
+
+		}
+
+		PcmManager(AbstractMemory* m)
+		{
+			ModifiedStart=NULL;
+			ModifiedEnd=NULL;
+			mem=m;
+			if(m->isPcm)
+			{
+				Trace::dprintf(curTick(),Trace::DefaultName,"PCM MODE!!!!!\n");
+				Callback* cb = new MakeCallback<PcmManager,
+					&PcmManager::Destructor>(this);
+				registerExitCallback(cb);
+			}
+		}
+
+		void Destructor()
+		{
+			Trace::dprintf(curTick(),Trace::DefaultName,"destructor!!!!!!!!!\n");
+			if(mem->isPcm)
+			{
+				mem->pcmId=0;
+				assert(ModifiedStart && ModifiedEnd);
+				if(ModifiedStart < ModifiedEnd)
+				{
+					WriteToFile(ModifiedStart,ModifiedEnd-ModifiedStart);
+				}
+			}
+		}
+
+		~PcmManager()
+		{
+			Destructor();
+		}
+		void NotifyBufferChanged()
+		{
+			if(mem->isPcm)
+			{
+				Trace::dprintf(curTick(),Trace::DefaultName,"BUFFER CHANGED!!!!!\n");
+				ModifiedStart = mem->pmemAddr + mem->size()+1; 
+				ModifiedEnd = mem->pmemAddr; 
+				ReadBuffer();
+			}
+		}
+		void WriteAccess(uint8_t* p,size_t sz)
+		{
+			if(p<ModifiedStart)
+			{
+				ModifiedStart=p;
+			}
+			if(p+sz>ModifiedEnd)
+			{
+				ModifiedEnd=p+sz;
+			}
+		}
+	}pcm_mgr;
+
+	
+	//////////////////////////////////////////
   private:
 
     // Prevent copying
@@ -194,7 +328,7 @@ class AbstractMemory : public MemObject
     typedef AbstractMemoryParams Params;
 
     AbstractMemory(const Params* p);
-    virtual ~AbstractMemory() {}
+    virtual ~AbstractMemory() {Trace::dprintf(curTick(),Trace::DefaultName,"destructor!!!!!!!!!\n");}
 
     /**
      * See if this is a null memory that should never store data and

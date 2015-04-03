@@ -52,3 +52,4 @@ gem5/
 *.opensdf
 gem5.sdf
 *.sdf
+*.ipch
