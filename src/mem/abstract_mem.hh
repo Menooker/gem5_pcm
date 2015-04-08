@@ -184,7 +184,7 @@ class AbstractMemory : public MemObject
 	//PCM part
 	int pcmId;
 	
-	friend class PcmManager;\
+	friend class PcmManager;
 	class PcmManager
 	{
 		uint8_t* ModifiedStart;
@@ -231,7 +231,10 @@ class AbstractMemory : public MemObject
 			sprintf(filename,"pcm_dump_%d.memdmp",mem->pcmId);
 			FILE* f=fopen(filename,"rb");
 			if(!f) //if no 
+			{
+				Trace::dprintf(curTick(),Trace::DefaultName,"Open buffer failed,Name=%s\n",filename);
 				return;
+			}
 			//read Magic code
 			FREAD(&mMagic,sizeof(mMagic),1,f);
 			if(mMagic!=Magic)
@@ -243,12 +246,12 @@ class AbstractMemory : public MemObject
 			size_t offset;
 			FREAD(&offset,sizeof(offset),1,f);
 			assert(offset< mem->size()); // offset should be >=0 and <size
-			
+			Trace::dprintf(curTick(),Trace::DefaultName,"Offset =%d\n",offset);
 
 			//read the size of the buffer
 			FREAD(&sz,sizeof(sz),1,f);
 			assert(sz <= mem->size() && offset+sz <= mem->size());
-
+			Trace::dprintf(curTick(),Trace::DefaultName,"Size =%d\n",sz);
 
 			//read the buffer
 			FREAD(mem->pmemAddr+offset,sz,1,f);
@@ -281,6 +284,7 @@ class AbstractMemory : public MemObject
 				assert(ModifiedStart && ModifiedEnd);
 				if(ModifiedStart < ModifiedEnd)
 				{
+					Trace::dprintf(curTick(),Trace::DefaultName,"wchk = %x\n",*(long*)((char*)mem->pmemAddr + 0x11000000));
 					WriteToFile(ModifiedStart,ModifiedEnd-ModifiedStart);
 				}
 			}
@@ -298,6 +302,7 @@ class AbstractMemory : public MemObject
 				ModifiedStart = mem->pmemAddr + mem->size()+1; 
 				ModifiedEnd = mem->pmemAddr; 
 				ReadBuffer();
+				Trace::dprintf(curTick(),Trace::DefaultName,"rchk = %x\n",*(long*)((char*)mem->pmemAddr + 0x11000000));
 			}
 		}
 		void WriteAccess(uint8_t* p,size_t sz)
