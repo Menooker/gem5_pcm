@@ -93,6 +93,9 @@ def addCommonOptions(parser):
     parser.add_option("--mem-size", action="store", type="string",
                       default="512MB",
                       help="Specify the physical memory size (single memory)")
+    parser.add_option("--pcm-size", action="store", type="string",
+                      default="0MB",
+                      help="Using PCM and specify the pcm size")
 
     parser.add_option("-l", "--lpae", action="store_true")
     parser.add_option("-V", "--virtualisation", action="store_true")

@@ -126,6 +126,9 @@ for alias, target in _mem_aliases_all:
         # Normal alias
         _mem_aliases[alias] = target
 
+def parse_pcm_option(string):
+    return 0;
+
 def config_mem(options, system):
     """
     Create the memory controllers based on the options and attach them.
@@ -160,7 +163,7 @@ def config_mem(options, system):
         for i in xrange(nbr_mem_ctrls):
             # Create an instance so we can figure out the address
             # mapping and row-buffer size
-            ctrl = cls(is_pcm = options.pcm);
+            ctrl = cls(is_pcm=options.pcm, pcm_size=parse_pcm_option(options.pcm_size));
 
             # Only do this for DRAMs
             if issubclass(cls, m5.objects.DRAMCtrl):
