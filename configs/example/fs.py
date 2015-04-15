@@ -80,7 +80,7 @@ def build_test_system(np):
         test_sys = makeSparcSystem(test_mem_mode, bm[0])
     elif buildEnv['TARGET_ISA'] == "x86":
         test_sys = makeLinuxX86System(test_mem_mode, options.num_cpus, bm[0],
-                options.ruby)
+                options.ruby)mem
     elif buildEnv['TARGET_ISA'] == "arm":
         test_sys = makeArmSystem(test_mem_mode, options.machine_type, bm[0],
                                  options.dtb_filename,

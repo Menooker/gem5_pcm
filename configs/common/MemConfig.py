@@ -141,11 +141,14 @@ def config_mem(options, system):
     """
 
     nbr_mem_ctrls = options.mem_channels
+    nbr_pcm = options.pcm_numb
     import math
     from m5.util import fatal
     intlv_bits = int(math.log(nbr_mem_ctrls, 2))
     if 2 ** intlv_bits != nbr_mem_ctrls:
         fatal("Number of memory channels must be a power of 2")
+    if (nbr_pcm > nbr_mem_ctrls):
+        fatal("Pcm number cannot be larger than memory channels")
     cls = get(options.mem_type)
     mem_ctrls = []
 
@@ -153,17 +156,20 @@ def config_mem(options, system):
     cache_line_bit = int(math.log(system.cache_line_size.value, 2)) - 1
     intlv_low_bit = cache_line_bit
 
-    if (not options.pcm):
-        options.pcm = False;
+    #if (not options.pcm):
+    #   options.pcm = False; 
 
     # For every range (most systems will only have one), create an
     # array of controllers and set their parameters to match their
     # address mapping in the case of a DRAM
+    is_pcm = True; 
     for r in system.mem_ranges:
         for i in xrange(nbr_mem_ctrls):
             # Create an instance so we can figure out the address
             # mapping and row-buffer size
-            ctrl = cls(is_pcm=options.pcm, pcm_size=parse_pcm_option(options.pcm_size));
+            if (is_pcm and i < nbr_pcm):
+                is_pcm = False;
+            ctrl = cls(is_pcm = is_pcm);
 
             # Only do this for DRAMs
             if issubclass(cls, m5.objects.DRAMCtrl):

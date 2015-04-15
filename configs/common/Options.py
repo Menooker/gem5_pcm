@@ -90,17 +90,16 @@ def addCommonOptions(parser):
                       help = "type of memory to use")
     parser.add_option("--mem-channels", type="int", default=1,
                       help = "number of memory channels")
+    parser.add_option("--pcm-numb", type="int", default=0,
+                      help = "number of pcm")
     parser.add_option("--mem-size", action="store", type="string",
                       default="512MB",
                       help="Specify the physical memory size (single memory)")
-    parser.add_option("--pcm-size", action="store", type="string",
-                      default="0MB",
-                      help="Using PCM and specify the pcm size")
 
     parser.add_option("-l", "--lpae", action="store_true")
     parser.add_option("-V", "--virtualisation", action="store_true")
-    parser.add_option("-P", "--pcm", action="store_true",
-                      help="Using PCM")
+    # parser.add_option("-P", "--pcm", action="store_true",
+    #                   help="Using PCM")
 
     # Cache Options
     parser.add_option("--caches", action="store_true")

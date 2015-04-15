@@ -59,6 +59,10 @@ AbstractMemory::AbstractMemory(const Params *p) :
     confTableReported(p->conf_table_reported), inAddrMap(p->in_addr_map),isPcm(params()->is_pcm),
     _system(NULL),pcmId(0),pcm_mgr(this)
 {
+    if (isPcm)
+        Trace::dprintf(curTick(),Trace::DefaultName,"Constructing PCM!!!!!!!!!\n");
+    else 
+        Trace::dprintf(curTick(),Trace::DefaultName,"Constructing DRAM!!!!!!!!!\n");
     if (size() % TheISA::PageBytes != 0)
         panic("Memory Size not divisible by page size\n");
 }

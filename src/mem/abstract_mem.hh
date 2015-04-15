@@ -118,7 +118,6 @@ class AbstractMemory : public MemObject
 
     // pcm options
     bool isPcm;
-    int pcmSize;
 
     std::list<LockedAddr> lockedAddrList;
 
