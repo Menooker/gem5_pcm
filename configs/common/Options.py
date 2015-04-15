@@ -75,7 +75,7 @@ def addCommonOptions(parser):
     parser.add_option("--cpu-clock", action="store", type="string",
                       default='2GHz',
                       help="Clock for blocks running at CPU speed")
-    parser.add_option("--smt", action="store_true", default=False,
+    parser.add_option("--smt", action="store_true", def--pcm-numbault=False,
                       help = """
                       Only used if multiple programs are specified. If true,
                       then the number of threads per cpu is same as the
@@ -98,8 +98,8 @@ def addCommonOptions(parser):
 
     parser.add_option("-l", "--lpae", action="store_true")
     parser.add_option("-V", "--virtualisation", action="store_true")
-    # parser.add_option("-P", "--pcm", action="store_true",
-    #                   help="Using PCM")
+    parser.add_option("-P", "--pcm", action="store_true",
+                       help="Using PCM")
 
     # Cache Options
     parser.add_option("--caches", action="store_true")
