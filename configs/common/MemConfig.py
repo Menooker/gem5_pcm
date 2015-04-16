@@ -163,13 +163,17 @@ def config_mem(options, system):
     # array of controllers and set their parameters to match their
     # address mapping in the case of a DRAM
     ispcm = True; 
+    pcmid = -1;
     for r in system.mem_ranges:
         for i in xrange(nbr_mem_ctrls):
             # Create an instance so we can figure out the address
             # mapping and row-buffer size
+            if (ispcm):
+                pcmid = i;
             if (ispcm and i >= nbr_pcm):
                 ispcm = False
-            ctrl = cls(is_pcm = ispcm)
+                pcmid = -1
+            ctrl = cls(is_pcm=ispcm,pcm_id=pcmid)
 
             # Only do this for DRAMs
             if issubclass(cls, m5.objects.DRAMCtrl):

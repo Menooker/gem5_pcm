@@ -57,12 +57,16 @@ using namespace std;
 AbstractMemory::AbstractMemory(const Params *p) :
     MemObject(p), range(params()->range), pmemAddr(NULL),
     confTableReported(p->conf_table_reported), inAddrMap(p->in_addr_map),isPcm(params()->is_pcm),
-    _system(NULL),pcmId(0),pcm_mgr(this)
+    _system(NULL),pcmId(params()->pcm_id),pcm_mgr(this)
 {
-    if (isPcm)
-        Trace::dprintf(curTick(),Trace::DefaultName,"Constructing PCM!!!!!!!!!\n");
-    else 
-        Trace::dprintf(curTick(),Trace::DefaultName,"Constructing DRAM!!!!!!!!!\n");
+    if (isPcm){
+        Trace::dprintf(curTick(),Trace::DefaultName,"Constructing PCM!!!!!!!!!");
+        Trace::dprintf(curTick(),Trace::DefaultName,"pcmId:%d\n",pcmId);
+    }
+    else {
+        Trace::dprintf(curTick(),Trace::DefaultName,"Constructing DRAM!!!!!!!!!");
+        Trace::dprintf(curTick(),Trace::DefaultName,"pcmId:%d\n",pcmId);
+    }
     if (size() % TheISA::PageBytes != 0)
         panic("Memory Size not divisible by page size\n");
 }
