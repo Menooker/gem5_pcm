@@ -281,7 +281,7 @@ class AbstractMemory : public MemObject
 			Trace::dprintf(curTick(),Trace::DefaultName,"destructor!!!!!!!!!\n");
 			if(mem->isPcm)
 			{
-				mem->pcmId=0;
+				//mem->pcmId=0;
 				assert(ModifiedStart && ModifiedEnd);
 				if(ModifiedStart < ModifiedEnd)
 				{
