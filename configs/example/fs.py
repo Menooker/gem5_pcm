@@ -80,7 +80,7 @@ def build_test_system(np):
         test_sys = makeSparcSystem(test_mem_mode, bm[0])
     elif buildEnv['TARGET_ISA'] == "x86":
         test_sys = makeLinuxX86System(test_mem_mode, options.num_cpus, bm[0],
-                options.ruby)mem
+                options.ruby, options.mem_numbers)
     elif buildEnv['TARGET_ISA'] == "arm":
         test_sys = makeArmSystem(test_mem_mode, options.machine_type, bm[0],
                                  options.dtb_filename,
@@ -275,6 +275,28 @@ if args:
     print "Error: script doesn't take any positional arguments"
     sys.exit(1)
 
+################ fixme options handling ###############
+mappender = '512MB'
+if options.mem_size:
+    mappender = options.mem_size
+
+szlist_a = options.memsize_list
+if szlist_a == "default":
+    szlist_a = mappender
+    for i in range(options.mem_numbers - 1):
+        szlist_a += "," + mappender
+else:
+    for i in range(len(szlist_a)):
+        if not (szlist_a[i].isdigit() or szlist_a[i] == "," or szlist_a[i] == "M" or szlist_a[i] == "G" or szlist_a[i] == "B"):
+            print "Error: Argument --memsize-list has incorrect format!"
+            sys.exit(1)
+
+szlist_a = szlist_a.split(",")
+if len(szlist_a) != options.mem_numbers:
+        print "Error: Argument --memsize-list doesn't match the number of memorys!"
+        sys.exit(1)
+
+################ fixme options handling ###############
 # system under test can be any CPU
 (TestCPUClass, test_mem_mode, FutureClass) = Simulation.setCPUClass(options)
 
@@ -289,11 +311,12 @@ if options.benchmark:
         print "Valid benchmarks are: %s" % DefinedBenchmarks
         sys.exit(1)
 else:
+    ############################ fixme
     if options.dual:
-        bm = [SysConfig(disk=options.disk_image, mem=options.mem_size),
-              SysConfig(disk=options.disk_image, mem=options.mem_size)]
+        bm = [SysConfig(disk=options.disk_image, mem=options.mem_size, mem_numb=options.mem_numbers, szlist=szlist_a),
+              SysConfig(disk=options.disk_image, mem=options.mem_size, mem_numb=options.mem_numbers, szlist=szlist_a)]
     else:
-        bm = [SysConfig(disk=options.disk_image, mem=options.mem_size)]
+        bm = [SysConfig(disk=options.disk_image, mem=options.mem_size, mem_numb=options.mem_numbers, szlist=szlist_a)]
 
 np = options.num_cpus
 

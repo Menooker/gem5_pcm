@@ -126,9 +126,6 @@ for alias, target in _mem_aliases_all:
         # Normal alias
         _mem_aliases[alias] = target
 
-def parse_pcm_option(string):
-    return 0;
-
 def config_mem(options, system):
     """
     Create the memory controllers based on the options and attach them.
@@ -141,14 +138,14 @@ def config_mem(options, system):
     """
 
     nbr_mem_ctrls = options.mem_channels
-    nbr_pcm = options.pcm_numb
+#    nbr_pcm = options.pcm_numb
     import math
     from m5.util import fatal
     intlv_bits = int(math.log(nbr_mem_ctrls, 2))
     if 2 ** intlv_bits != nbr_mem_ctrls:
         fatal("Number of memory channels must be a power of 2")
-    if (nbr_pcm > nbr_mem_ctrls):
-        fatal("Pcm number cannot be larger than memory channels")
+#    if (nbr_pcm > nbr_mem_ctrls):
+#        fatal("Pcm number cannot be larger than memory channels")
     cls = get(options.mem_type)
     mem_ctrls = []
 
@@ -162,18 +159,48 @@ def config_mem(options, system):
     # For every range (most systems will only have one), create an
     # array of controllers and set their parameters to match their
     # address mapping in the case of a DRAM
-    ispcm = True; 
-    pcmid = -1;
-    for r in system.mem_ranges:
+    # ispcm = True
+################ mem options handling ###############
+    appender = "0"
+    if options.pcm:
+        appender = "1"
+    ispcm_a = options.is_pcm
+    if ispcm_a == "default":
+        ispcm_a = appender
+        for i in range(options.mem_numbers-1):
+            ispcm_a += "," + appender
+### error check
+    else:
+        for i in range(len(ispcm_a)):
+            if not (ispcm_a[i].isdigit() or ispcm_a[i] == ","):
+                fatal("Error: Argument --is-pcm has incorrect format!")
+### error check
+
+    ispcm_a = ispcm_a.split(",")
+    for i in range(len(ispcm_a)):
+        ispcm_a[i] = int(ispcm_a[i])
+
+### error check
+    if len(ispcm_a) != options.mem_numbers:
+        fatal("Error: Argument --is-pcm doesn't match the number of memorys!")
+### error check
+################ mem options handling ###############
+
+    index = 0
+    pcmid = -1
+    for r in system.mem_ranges:  ############################# fixme
+        ispcm = ispcm_a[index]
         for i in xrange(nbr_mem_ctrls):
             # Create an instance so we can figure out the address
             # mapping and row-buffer size
-            if (ispcm):
-                pcmid = i;
-            if (ispcm and i >= nbr_pcm):
-                ispcm = False
-                pcmid = -1
-            ctrl = cls(is_pcm=ispcm,pcm_id=pcmid)
+            if ispcm:
+                pcmid += 1
+                ctrl = cls(is_pcm=ispcm, pcm_id=pcmid)
+#            if ispcm and i >= nbr_pcm:
+#                ispcm = False
+#               pcmid = -1
+            else:
+                ctrl = cls(is_pcm=ispcm, pcm_id=-1)
 
             # Only do this for DRAMs
             if issubclass(cls, m5.objects.DRAMCtrl):
@@ -202,7 +229,7 @@ def config_mem(options, system):
                                               intlvBits = intlv_bits,
                                               intlvMatch = i)
             mem_ctrls.append(ctrl)
-
+        index += 1
     system.mem_ctrls = mem_ctrls
 
     # Connect the controllers to the membus

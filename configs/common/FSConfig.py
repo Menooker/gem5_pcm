@@ -378,7 +378,7 @@ def connectX86RubySystem(x86_sys):
 
 
 def makeX86System(mem_mode, numCPUs = 1, mdesc = None, self = None,
-                  Ruby = False):
+                  Ruby = False, numMem = 1): ########################### fixme
     if self == None:
         self = X86System()
 
@@ -396,7 +396,7 @@ def makeX86System(mem_mode, numCPUs = 1, mdesc = None, self = None,
     excess_mem_size = \
         convert.toMemorySize(mdesc.mem()) - convert.toMemorySize('3GB')
     if excess_mem_size <= 0:
-        self.mem_ranges = [AddrRange(mdesc.mem())]
+        self.mem_ranges = mdesc.memaddr()
     else:
         warn("Physical memory size specified is %s which is greater than " \
              "3GB.  Twice the number of memory controllers would be " \
@@ -487,11 +487,11 @@ def makeX86System(mem_mode, numCPUs = 1, mdesc = None, self = None,
     self.intel_mp_table.ext_entries = ext_entries
 
 def makeLinuxX86System(mem_mode, numCPUs = 1, mdesc = None,
-                       Ruby = False):
+                       Ruby = False, numMem = 1):
     self = LinuxX86System()
 
     # Build up the x86 system and then specialize it for Linux
-    makeX86System(mem_mode, numCPUs, mdesc, self, Ruby)
+    makeX86System(mem_mode, numCPUs, mdesc, self, Ruby, numMem)
 
     # We assume below that there's at least 1MB of memory. We'll require 2
     # just to avoid corner cases.
@@ -507,19 +507,27 @@ def makeLinuxX86System(mem_mode, numCPUs = 1, mdesc = None,
         # Mark the rest of physical memory as available
         X86E820Entry(addr = 0x100000,
                 size = '%dB' % (self.mem_ranges[0].size() - 0x100000),
-                range_type = 1),
+               range_type = 1),                                        ################################# here's really important, need changes, fixme
         # Reserve the last 16kB of the 32-bit address space for the
         # m5op interface
         X86E820Entry(addr=0xFFFF0000, size='64kB', range_type=2),
         ]
 
+    addrindex = self.mem_ranges[0].size()
+    for i in range(1,len(self.mem_ranges)):
+        _size = '%dB' % (self.mem_ranges[i].size())
+        entries.append(X86E820Entry(addr = addrindex,
+                                size = _size, range_type = 1))
+        addrindex += self.mem_ranges[i].size()
+
     # In case the physical memory is greater than 3GB, we split it into two
     # parts and add a separate e820 entry for the second part.  This entry
     # starts at 0x100000000,  which is the first address after the space
     # reserved for devices.
-    if len(self.mem_ranges) == 2:
-        entries.append(X86E820Entry(addr = 0x100000000,
-            size = '%dB' % (self.mem_ranges[1].size()), range_type = 1))
+    ########################################################################### fixme
+    # if len(self.mem_ranges) == 2:
+    #    entries.append(X86E820Entry(addr = 0x100000000,
+    #        size = '%dB' % (self.mem_ranges[1].size()), range_type = 1))
 
     self.e820_table.entries = entries
 

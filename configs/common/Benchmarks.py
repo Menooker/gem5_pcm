@@ -26,16 +26,20 @@
 #
 # Authors: Ali Saidi
 
+from m5.objects import *
+from m5.util import *
 from SysPaths import script, disk, binary
 from os import environ as env
 from m5.defines import buildEnv
 
 class SysConfig:
-    def __init__(self, script=None, mem=None, disk=None, mem_numb=1):
+    def __init__(self, script=None, mem=None, disk=None, mem_numb=1, szlist=["128MB"]):
         self.scriptname = script
         self.diskname = disk
+        ############################# fixme
         self.memsize = mem
         self.memnumb = mem_numb
+        self.memszlist = szlist
 
     def script(self):
         if self.scriptname:
@@ -62,14 +66,33 @@ class SysConfig:
             print "Don't know what default disk image to use for %s ISA" % \
                 buildEnv['TARGET_ISA']
             exit(1)
-###########################
+############################ fixme
     def memaddr(self):
         addrrange = []
-        startaddr = "0MB"
-        for r in range(memnumb):
-            addrrange += AddrRange(memsize)
-            addrIncrease(startaddr)
+        startaddr = 0x0
+        for r in range(self.memnumb):
+            if r == 0:
+                addrrange += [AddrRange(self.memszlist[r])]
+                startaddr = addrrange[0].start + addrrange[0].size()
+            else:
+                addrrange += [AddrRange(startaddr, size=self.memszlist[r])]
+                startaddr += addrrange[r].size()
+            print self.memszlist[r]
+            print addrrange[r].size()
         return addrrange
+
+    def addrIncrease(self, startaddr, memsize):
+        if startaddr[-2:] == "MB":
+            start_n = int(startaddr[:-2])
+        if startaddr[-2:] == "GB":
+            start_n = int(startaddr[:-2])*1024
+        if memsize[-2:] == "MB":
+            size_n = int(memsize[:-2])
+        if memsize[-2:] == "GB":
+            size_n = int(memsize[:-2])*1024
+
+        total = "%d" % (start_n+size_n)
+        return total + "MB"
 #################################
 
 # Benchmarks are defined as a key in a dict which is a list of SysConfigs

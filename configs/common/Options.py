@@ -75,7 +75,7 @@ def addCommonOptions(parser):
     parser.add_option("--cpu-clock", action="store", type="string",
                       default='2GHz',
                       help="Clock for blocks running at CPU speed")
-    parser.add_option("--smt", action="store_true", def--pcm-numbault=False,
+    parser.add_option("--smt", action="store_true", default=False,
                       help = """
                       Only used if multiple programs are specified. If true,
                       then the number of threads per cpu is same as the
@@ -90,11 +90,18 @@ def addCommonOptions(parser):
                       help = "type of memory to use")
     parser.add_option("--mem-channels", type="int", default=1,
                       help = "number of memory channels")
-    parser.add_option("--pcm-numb", type="int", default=0,
-                      help = "number of pcm")
+
+    parser.add_option("--mem-numbers", type="int", default=1,
+                      help = "number of memorys")
+    parser.add_option("--memsize-list", type="string", default="default",
+                      help = "set size for each memory by a list")    #### fixme
+    parser.add_option("--is-pcm", type="string", default="default",
+                      help = "set is_pcm for each memory by a list")    #### fixme
+
+#    parser.add_option("--pcm-numb", type="int", default=0,
+#                      help = "number of pcm")
     parser.add_option("--mem-size", action="store", type="string",
-                      default="512MB",
-                      help="Specify the physical memory size (single memory)")
+                      help="Specify the physical memory size at one time")  #### fixme
 
     parser.add_option("-l", "--lpae", action="store_true")
     parser.add_option("-V", "--virtualisation", action="store_true")

@@ -56,6 +56,8 @@ class AbstractMemory(MemObject):
     # certain memories may be excluded from the global address map,
     # e.g. by the testers that use shadow memories as a reference
     in_addr_map = Param.Bool(True, "Memory part of the global address map")
+    is_pcm = Param.Bool(True, "is pcm")
+    pcm_id = Param.Int(-1, "pcm id")
 
     # Should the bootloader include this memory when passing
     # configuration information about the physical memory layout to
